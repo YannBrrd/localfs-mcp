@@ -105,8 +105,8 @@ This MCP server integrates seamlessly with VS Code when using Claude or other AI
    ```json
    {
      "allowedPaths": [
-       "/home/username/Documents",
-       "/home/username/Projects"
+       "/home/username/documents",
+       "/home/username/projects"
      ]
    }
    ```
