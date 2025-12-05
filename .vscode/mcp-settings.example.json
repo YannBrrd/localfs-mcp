@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "localfs": {
+      "command": "localfs-mcp",
+      "args": ["--config", "${workspaceFolder}/config.json"]
+    }
+  }
+}

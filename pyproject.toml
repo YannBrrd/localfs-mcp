@@ -1,0 +1,30 @@
+[project]
+name = "localfs-mcp"
+version = "0.1.0"
+description = "A Model Context Protocol (MCP) server for read-only local filesystem access"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Yann Barraud"}
+]
+dependencies = [
+    "mcp>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+localfs-mcp = "localfs_mcp.server:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
