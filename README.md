@@ -125,7 +125,7 @@ This MCP server integrates seamlessly with VS Code when using Claude or other AI
    - Type "Preferences: Open User Settings (JSON)"
    - Add the MCP server configuration
 
-   **Quick Start:** You can also copy the example configuration from `.vscode/mcp-settings.example.json` in this repository as a starting point. Note that the example file uses `${workspaceFolder}/config.json` which is a workspace-relative path, while the examples below show absolute paths.
+   **Quick Start:** You can also copy the example configuration from `.vscode/mcp-settings.example.json` in this repository as a starting point. Note that the example file uses `${workspaceFolder}/config.json`, where `${workspaceFolder}` is a VS Code variable that automatically resolves to the root of your workspace. This makes the configuration portable for shared projects. The examples below show absolute paths instead.
 
    **Windows configuration:**
    ```json
