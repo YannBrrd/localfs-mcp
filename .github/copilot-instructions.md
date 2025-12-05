@@ -37,7 +37,7 @@ localfs-mcp/
 - Use Python 3.10+ type hints for all function parameters and return values
 - Follow PEP 8 style guidelines
 - Use double quotes for strings
-- Use docstrings for all classes and public methods (Google style)
+- Use concise docstrings for all classes and public methods (simple one-line format)
 - Prefer `pathlib.Path` over string paths for filesystem operations
 
 ### Type Annotations
@@ -109,10 +109,6 @@ pytest tests/test_server.py
 
 ### Setup
 ```bash
-# Clone the repository
-git clone https://github.com/YannBrrd/localfs-mcp.git
-cd localfs-mcp
-
 # Install in development mode
 pip install -e ".[dev]"
 
