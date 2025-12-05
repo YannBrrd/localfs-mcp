@@ -1,6 +1,7 @@
 """MCP server for read-only local filesystem access."""
 
 import asyncio
+from datetime import datetime
 import json
 import os
 import sys
@@ -197,7 +198,7 @@ class LocalFSServer:
                 if entry.is_file():
                     try:
                         size = f" ({entry.stat().st_size} bytes)"
-                    except:
+                    except (OSError, PermissionError):
                         size = ""
                 entries.append(f"{entry_type:5} {entry.name}{size}")
             
@@ -254,11 +255,12 @@ class LocalFSServer:
         
         try:
             stat_info = path.stat()
+            modified_time = datetime.fromtimestamp(stat_info.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
             info_lines = [
                 f"Path: {path}",
                 f"Type: {'Directory' if path.is_dir() else 'File'}",
                 f"Size: {stat_info.st_size} bytes",
-                f"Modified: {stat_info.st_mtime}",
+                f"Modified: {modified_time}",
                 f"Absolute path: {path.resolve()}"
             ]
             

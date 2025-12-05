@@ -211,7 +211,8 @@ class TestSearchFiles:
         subdir.mkdir()
         (subdir / "test3.txt").write_text("test")
         
-        result = await srv.search_files(str(test_dir), "*.txt", recursive=False)
+        NON_RECURSIVE = False
+        result = await srv.search_files(str(test_dir), "*.txt", recursive=NON_RECURSIVE)
         
         assert len(result) == 1
         text = result[0].text
@@ -230,7 +231,8 @@ class TestSearchFiles:
         subdir.mkdir()
         (subdir / "test2.txt").write_text("test")
         
-        result = await srv.search_files(str(test_dir), "*.txt", recursive=True)
+        RECURSIVE = True
+        result = await srv.search_files(str(test_dir), "*.txt", recursive=RECURSIVE)
         
         assert len(result) == 1
         text = result[0].text
@@ -240,7 +242,8 @@ class TestSearchFiles:
     async def test_search_no_matches(self, server):
         """Test search with no matches."""
         srv, test_dir = server
-        result = await srv.search_files(str(test_dir), "*.nonexistent", recursive=False)
+        NON_RECURSIVE = False
+        result = await srv.search_files(str(test_dir), "*.nonexistent", recursive=NON_RECURSIVE)
         
         assert len(result) == 1
         assert "No files found" in result[0].text
@@ -249,7 +252,8 @@ class TestSearchFiles:
         """Test searching in a disallowed directory."""
         srv, test_dir = server
         other_path = test_dir.parent / "other"
-        result = await srv.search_files(str(other_path), "*.txt", recursive=False)
+        NON_RECURSIVE = False
+        result = await srv.search_files(str(other_path), "*.txt", recursive=NON_RECURSIVE)
         
         assert len(result) == 1
         assert "Access denied" in result[0].text
