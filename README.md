@@ -1,6 +1,6 @@
 # LocalFS MCP Server
 
-A Model Context Protocol (MCP) server for read-only local filesystem access. This server allows safe, controlled access to your local filesystem through the MCP protocol, making it ideal for use with AI assistants like Claude in VSCode.
+A Model Context Protocol (MCP) server for read-only local filesystem access. This server allows safe, controlled access to your local filesystem through the MCP protocol, making it ideal for use with AI assistants like Claude in VS Code.
 
 ## Features
 
@@ -67,9 +67,9 @@ Or with a custom config file:
 localfs-mcp --config /path/to/config.json
 ```
 
-### Using with VSCode and Claude
+### Using with VS Code and Claude
 
-1. Install the MCP extension in VSCode
+1. Install the MCP extension in VS Code
 2. Configure the MCP settings to use this server:
 
 ```json
@@ -83,7 +83,7 @@ localfs-mcp --config /path/to/config.json
 }
 ```
 
-3. Restart VSCode or reload the MCP extension
+3. Restart VS Code or reload the MCP extension
 
 ## Available Tools
 

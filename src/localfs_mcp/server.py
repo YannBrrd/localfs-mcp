@@ -3,7 +3,6 @@
 import asyncio
 from datetime import datetime
 import json
-import os
 import sys
 from pathlib import Path
 from typing import Any
