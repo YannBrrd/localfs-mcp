@@ -152,6 +152,20 @@ This MCP server integrates seamlessly with VS Code when using Claude or other AI
    ```
 
    **Note:** If you installed the package in a virtual environment, you may need to provide the full path to the `localfs-mcp` command:
+   
+   **Windows:**
+   ```json
+   {
+     "mcpServers": {
+       "localfs": {
+         "command": "C:\\path\\to\\venv\\Scripts\\localfs-mcp.exe",
+         "args": ["--config", "C:\\path\\to\\config.json"]
+       }
+     }
+   }
+   ```
+   
+   **Linux/Mac:**
    ```json
    {
      "mcpServers": {
