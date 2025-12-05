@@ -116,7 +116,7 @@ This MCP server integrates seamlessly with VS Code when using Claude or other AI
    Open your VS Code settings and configure the MCP server. You can do this in two ways:
 
    **Option A: Using VS Code Settings UI**
-   - Open VS Code Settings (Ctrl+, or Cmd+,)
+   - Open VS Code Settings (`Ctrl+,`/`Cmd+,`)
    - Search for "MCP"
    - Add your LocalFS server configuration
 
